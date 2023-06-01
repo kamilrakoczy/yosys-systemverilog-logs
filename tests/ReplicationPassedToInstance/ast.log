@@ -1275,6 +1275,7 @@ Object 'work@top' of type 'design'
       Object '' of type 'cont_assign'
         Object 'x' of type 'ref_obj'
         Object '' of type 'operation'
+          Object '' of type 'int_typespec'
           Object 'wmask_i' of type 'ref_obj'
       Object '' of type 'constant'
       Object 'o' of type 'ref_obj'
@@ -1371,14 +1372,16 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.11-8.28>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.11-8.12> str='\x'
-        AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.20-8.27> str='\wmask_i'
+        AST_CAST_SIZE <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.15-8.28>
+          AST_CONSTANT <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.20-8.27> str='\wmask_i'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod\dut\Width=s32'00000000000000000000000000010011 (wmask_i, x);
       /** AST_PARAMETER **/
       input [18:0] wmask_i;
       output signed [31:0] x;
-      assign x = wmask_i;
+      assign x = /** AST_CAST_SIZE **/;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1398,14 +1401,16 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.11-8.28> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.11-8.12> str='\x' basic_prep
-        AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.20-8.27> str='\wmask_i' basic_prep
+        AST_CAST_SIZE <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.15-8.28> basic_prep
+          AST_CONSTANT <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:8.20-8.27> str='\wmask_i' basic_prep
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod\dut\Width=s32'00000000000000000000000000010011 (wmask_i, x);
       /** AST_PARAMETER **/
       input [18:0] wmask_i;
       output signed [31:0] x;
-      assign x = wmask_i;
+      assign x = /** AST_CAST_SIZE **/;
     endmodule
 --- END OF AST DUMP ---
 
@@ -1594,7 +1599,7 @@ module \$paramod\dut\Width=s32'00000000000000000000000000010011 (wmask_i, x);
   (* src = "UHDM-integration-tests/tests/ReplicationPassedToInstance/top.sv:6.15-6.16" *)
   output [31:0] x;
   wire [31:0] x;
-  assign x = { 13'h0000, wmask_i };
+  assign x = { 31'h00000000, wmask_i[0] };
 endmodule
 Dumping module `\top'.
 

@@ -1417,10 +1417,14 @@ Dumping AST before simplification:
       AST_ASSIGN <UHDM-integration-tests/tests/OneImport/dut.sv:8.10-9.36>
         AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:8.10-8.11> str='\b'
         AST_BIT_OR <UHDM-integration-tests/tests/OneImport/dut.sv:8.14-9.36>
-          AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
-          AST_EQ <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.35>
-            AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.20> str='\a'
-            AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.24-9.35> str='\OPCODE_LOAD'
+          AST_CAST_SIZE <UHDM-integration-tests/tests/OneImport/dut.sv:8.14-8.35>
+            AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
+            AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
+          AST_CAST_SIZE <UHDM-integration-tests/tests/OneImport/dut.sv:9.16-9.36>
+            AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
+            AST_EQ <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.35>
+              AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.20> str='\a'
+              AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.24-9.35> str='\OPCODE_LOAD'
       AST_ENUM <UHDM-integration-tests/tests/OneImport/pkg.sv:2.3-5.14> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/OneImport/pkg.sv:3.5-3.28> str='\my_pkg::OPCODE_LOAD' logic basic_prep range=[5:0]
           ATTR \enum_base_type:
@@ -1457,7 +1461,7 @@ Dumping Verilog AST before simplification:
       output reg [2:0] b;
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
-      assign b = (2)|((a)==(OPCODE_LOAD));
+      assign b = (/** AST_CAST_SIZE **/)|(/** AST_CAST_SIZE **/);
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule
@@ -1503,10 +1507,12 @@ Dumping AST after simplification:
       AST_ASSIGN <UHDM-integration-tests/tests/OneImport/dut.sv:8.10-9.36> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:8.10-8.11> str='\b' basic_prep
         AST_BIT_OR <UHDM-integration-tests/tests/OneImport/dut.sv:8.14-9.36> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) basic_prep range=[31:0] int=2
-          AST_EQ <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.35> basic_prep
-            AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.20> str='\a' basic_prep
-            AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:9.24-9.35> bits='000011'(6) basic_prep range=[5:0] int=3
+          AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:8.14-8.35> bits='010'(3) basic_prep range=[2:0] int=2
+          AST_CAST_SIZE <UHDM-integration-tests/tests/OneImport/dut.sv:9.16-9.36> basic_prep
+            AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) basic_prep range=[31:0] int=3
+            AST_EQ <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.35> basic_prep
+              AST_IDENTIFIER <UHDM-integration-tests/tests/OneImport/dut.sv:9.19-9.20> str='\a' basic_prep
+              AST_CONSTANT <UHDM-integration-tests/tests/OneImport/dut.sv:9.24-9.35> bits='000011'(6) basic_prep range=[5:0] int=3
       AST_ENUM <UHDM-integration-tests/tests/OneImport/pkg.sv:2.3-5.14> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/OneImport/pkg.sv:3.5-3.28> str='\my_pkg::OPCODE_LOAD' logic basic_prep range=[5:0]
           ATTR \enum_base_type:
@@ -1543,7 +1549,7 @@ Dumping Verilog AST after simplification:
       output reg [2:0] b;
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
-      assign b = (2)|((a)==(6'b 000011));
+      assign b = (3'b 010)|(/** AST_CAST_SIZE **/);
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule

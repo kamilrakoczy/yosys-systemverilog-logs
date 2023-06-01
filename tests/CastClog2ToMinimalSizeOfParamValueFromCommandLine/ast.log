@@ -936,7 +936,9 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
+        Object '' of type 'int_typespec'
         Object '' of type 'operation'
+          Object '' of type 'integer_typespec'
           Object 'X' of type 'ref_obj'
     Object 'o' of type 'int_var'
 Generating RTLIL representation for module `\top'.
@@ -950,13 +952,17 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.11-3.34>
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.11-3.12> str='\o'
-        AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.31-3.32> str='\X'
+        AST_CAST_SIZE <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.15-3.34>
+          AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+          AST_CAST_SIZE <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.20-3.33>
+            AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+            AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.31-3.32> str='\X'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
       /** AST_PARAMETER **/
       output signed [31:0] o;
-      assign o = X;
+      assign o = /** AST_CAST_SIZE **/;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -969,13 +975,13 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.11-3.34> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.11-3.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.31-3.32> bits='00000000000000000000000000000101'(32) basic_prep range=[31:0] int=5
+        AST_CONSTANT <UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:3.15-3.34> bits='1'(1) basic_prep range=[0:0] int=1
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
       /** AST_PARAMETER **/
       output signed [31:0] o;
-      assign o = 5;
+      assign o = 1'b 1;
     endmodule
 --- END OF AST DUMP ---
 
@@ -1116,7 +1122,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/CastClog2ToMinimalSizeOfParamValueFromCommandLine/top.sv:1.23-1.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign o = 32'd5;
+  assign o = 32'd1;
 endmodule
 
 4. Executing Verilog backend.
