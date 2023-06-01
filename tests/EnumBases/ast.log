@@ -2719,40 +2719,28 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000001011001'(32) signed range=[31:0] int=89
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/EnumBases/top.sv:16.5-16.80> str='$enum17' logic
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> str='\LOGIC_0_ITEM_0' logic range=[-1:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> str='\LOGIC_0_ITEM_0' logic
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> str='\LOGIC_0_ITEM_1' logic range=[-1:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> str='\LOGIC_0_ITEM_1' logic
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:16.5-16.80> str='\logic_0_e'
         AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg range=[0:0]
           ATTR \enum_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum17' bits='00100100011001010110111001110101011011010011000100110111'(56) range=[55:0] int=1970090295
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/EnumBases/top.sv:17.5-17.83> str='$enum18' logic
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> str='\LOGIC_1_ITEM_0' logic range=[-1:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> str='\LOGIC_1_ITEM_0' logic
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> bits='0'(1) range=[0:0]
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> str='\LOGIC_1_ITEM_1' logic range=[-1:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> str='\LOGIC_1_ITEM_1' logic
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> bits='1'(1) range=[0:0] int=1
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:17.5-17.83> str='\logic_1_e'
         AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg range=[0:0]
           ATTR \enum_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum18' bits='00100100011001010110111001110101011011010011000100111000'(56) range=[55:0] int=1970090296
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:6.13-6.16> str='\type1'
         AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:6.13-6.16> range=[0:0]
@@ -3219,48 +3207,36 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000001011001'(32) signed basic_prep range=[31:0] int=89
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/EnumBases/top.sv:16.5-16.80> str='$enum17' logic basic_prep
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> str='\LOGIC_0_ITEM_0' logic basic_prep range=[0:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> str='\LOGIC_0_ITEM_0' logic basic_prep
           ATTR \enum_base_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum17' bits='00100100011001010110111001110101011011010011000100110111'(56) basic_prep range=[55:0] int=1970090295
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> str='\LOGIC_0_ITEM_1' logic basic_prep range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:16.26-16.44> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> str='\LOGIC_0_ITEM_1' logic basic_prep
           ATTR \enum_base_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum17' bits='00100100011001010110111001110101011011010011000100110111'(56) basic_prep range=[55:0] int=1970090295
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:16.49-16.67> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:16.5-16.80> str='\logic_0_e' basic_prep
-        AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg basic_prep range=[0:0]
+        AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg basic_prep range=[31:0]
           ATTR \enum_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum17' bits='00100100011001010110111001110101011011010011000100110111'(56) basic_prep range=[55:0] int=1970090295
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ENUM <UHDM-integration-tests/tests/EnumBases/top.sv:17.5-17.83> str='$enum18' logic basic_prep
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> str='\LOGIC_1_ITEM_0' logic basic_prep range=[0:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> str='\LOGIC_1_ITEM_0' logic basic_prep
           ATTR \enum_base_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum18' bits='00100100011001010110111001110101011011010011000100111000'(56) basic_prep range=[55:0] int=1970090296
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:17.26-17.47> bits='0'(1) basic_prep range=[0:0]
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> str='\LOGIC_1_ITEM_1' logic basic_prep range=[0:0]
+        AST_ENUM_ITEM <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> str='\LOGIC_1_ITEM_1' logic basic_prep
           ATTR \enum_base_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum18' bits='00100100011001010110111001110101011011010011000100111000'(56) basic_prep range=[55:0] int=1970090296
           AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:17.49-17.70> bits='1'(1) basic_prep range=[0:0] int=1
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:17.5-17.83> str='\logic_1_e' basic_prep
-        AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg basic_prep range=[0:0]
+        AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> reg basic_prep range=[31:0]
           ATTR \enum_type:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> str='$enum18' bits='00100100011001010110111001110101011011010011000100111000'(56) basic_prep range=[55:0] int=1970090296
-          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[0:0]
-            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+          AST_RANGE <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> basic_prep range=[31:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumBases/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_TYPEDEF <UHDM-integration-tests/tests/EnumBases/top.sv:6.13-6.16> str='\type1' basic_prep
         AST_WIRE <UHDM-integration-tests/tests/EnumBases/top.sv:6.13-6.16> basic_prep range=[0:0]

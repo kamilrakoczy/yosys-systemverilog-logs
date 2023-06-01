@@ -1284,14 +1284,10 @@ Dumping AST before simplification:
       AST_ASSIGN <UHDM-integration-tests/tests/OnePackage/dut.sv:16.10-17.45>
         AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:16.10-16.11> str='\b'
         AST_BIT_OR <UHDM-integration-tests/tests/OnePackage/dut.sv:16.14-17.45>
-          AST_CAST_SIZE <UHDM-integration-tests/tests/OnePackage/dut.sv:16.14-16.36>
-            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
-            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
-          AST_CAST_SIZE <UHDM-integration-tests/tests/OnePackage/dut.sv:17.16-17.45>
-            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
-            AST_EQ <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.44>
-              AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.20> str='\a'
-              AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='000011'(6) range=[5:0] int=3
+          AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
+          AST_EQ <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.44>
+            AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.20> str='\a'
+            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='000011'(6) range=[5:0] int=3
       AST_ENUM <UHDM-integration-tests/tests/OnePackage/dut.sv:2.3-5.14> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/OnePackage/dut.sv:3.5-3.28> str='\top_pkg::OPCODE_LOAD' logic basic_prep range=[5:0]
           ATTR \enum_base_type:
@@ -1325,7 +1321,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       input [5:0] a;
       output reg [2:0] b;
-      assign b = (/** AST_CAST_SIZE **/)|(/** AST_CAST_SIZE **/);
+      assign b = (2)|((a)==(6'b 000011));
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule
@@ -1344,12 +1340,10 @@ Dumping AST after simplification:
       AST_ASSIGN <UHDM-integration-tests/tests/OnePackage/dut.sv:16.10-17.45> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:16.10-16.11> str='\b' basic_prep
         AST_BIT_OR <UHDM-integration-tests/tests/OnePackage/dut.sv:16.14-17.45> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:16.14-16.36> bits='010'(3) basic_prep range=[2:0] int=2
-          AST_CAST_SIZE <UHDM-integration-tests/tests/OnePackage/dut.sv:17.16-17.45> basic_prep
-            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) basic_prep range=[31:0] int=3
-            AST_EQ <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.44> basic_prep
-              AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.20> str='\a' basic_prep
-              AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='000011'(6) basic_prep range=[5:0] int=3
+          AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) basic_prep range=[31:0] int=2
+          AST_EQ <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.44> basic_prep
+            AST_IDENTIFIER <UHDM-integration-tests/tests/OnePackage/dut.sv:17.19-17.20> str='\a' basic_prep
+            AST_CONSTANT <UHDM-integration-tests/tests/OnePackage/dut.sv:0.0-0.0> bits='000011'(6) basic_prep range=[5:0] int=3
       AST_ENUM <UHDM-integration-tests/tests/OnePackage/dut.sv:2.3-5.14> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/OnePackage/dut.sv:3.5-3.28> str='\top_pkg::OPCODE_LOAD' logic basic_prep range=[5:0]
           ATTR \enum_base_type:
@@ -1383,7 +1377,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       input [5:0] a;
       output reg [2:0] b;
-      assign b = (3'b 010)|(/** AST_CAST_SIZE **/);
+      assign b = (2)|((a)==(6'b 000011));
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule
@@ -1479,7 +1473,7 @@ Optimizing module dut.
 
 2.7. Executing WREDUCE pass (reducing word size of cells).
 Removed top 4 bits (of 6) from port B of cell dut.$eq$UHDM-integration-tests/tests/OnePackage/dut.sv:17$1 ($eq).
-Removed top 2 bits (of 3) from wire dut.$eq$UHDM-integration-tests/tests/OnePackage/dut.sv:17$1_Y.
+Removed top 31 bits (of 32) from wire dut.$eq$UHDM-integration-tests/tests/OnePackage/dut.sv:17$1_Y.
 
 2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \dut..

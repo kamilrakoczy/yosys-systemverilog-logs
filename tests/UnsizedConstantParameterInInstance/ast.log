@@ -1222,7 +1222,7 @@ Generating RTLIL representation for module `$paramod\prim_subreg\RESVAL=s32'1111
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:1.1-4.10> str='$paramod\prim_subreg\RESVAL=s32'11111111111111111111111111111111'
       AST_PARAMETER <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:2.27-2.38> str='\RESVAL' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='11111111111111111111111111111111'(32) signed range=[31:0] int=4294967295
+        AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='11111111111111111111111111111111'(32) range=[31:0] int=4294967295
         AST_RANGE <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:2.20-2.26> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1267,7 +1267,7 @@ Generating RTLIL representation for module `\top'.
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:6.1-16.10> str='\top'
       AST_PARAMETER <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:7.27-7.40> str='\RESVAL' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) range=[31:0]
         AST_RANGE <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:7.20-7.26> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/UnsizedConstantParameterInInstance/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

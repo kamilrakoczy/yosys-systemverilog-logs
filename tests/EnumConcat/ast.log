@@ -1411,7 +1411,7 @@ Dumping AST before simplification:
       AST_WIRE <UHDM-integration-tests/tests/EnumConcat/dut.v:7.12-7.14> str='\a0' input logic port=1 range=[0:0]
       AST_GENBLOCK <UHDM-integration-tests/tests/EnumConcat/dut.v:14.33-18.5> str='\genblk1[0]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000000'(32) range=[31:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1428,7 +1428,7 @@ Dumping AST before simplification:
                   AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.12-16.22> str='\PRIV_LVL_M'
       AST_GENBLOCK <UHDM-integration-tests/tests/EnumConcat/dut.v:14.33-18.5> str='\genblk1[1]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000001'(32) range=[31:0] int=1
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000001'(32) unsized range=[31:0] int=1
           AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1445,7 +1445,7 @@ Dumping AST before simplification:
                   AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.12-16.22> str='\PRIV_LVL_M'
       AST_GENBLOCK <UHDM-integration-tests/tests/EnumConcat/dut.v:14.33-18.5> str='\genblk1[2]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000010'(32) unsized range=[31:0] int=2
           AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1462,7 +1462,7 @@ Dumping AST before simplification:
                   AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.12-16.22> str='\PRIV_LVL_M'
       AST_GENBLOCK <UHDM-integration-tests/tests/EnumConcat/dut.v:14.33-18.5> str='\genblk1[3]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000011'(32) unsized range=[31:0] int=3
           AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1546,7 +1546,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
             AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\genblk1[0].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
         AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1559,7 +1559,7 @@ Dumping AST after simplification:
               AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.4-16.8> str='\c[0]' basic_prep
               AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:16.11-16.23> bits='0011'(4) basic_prep range=[3:0] int=3
       AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\genblk1[1].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000001'(32) unsized basic_prep range=[31:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1572,7 +1572,7 @@ Dumping AST after simplification:
               AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.4-16.8> str='\c[1]' basic_prep
               AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:16.11-16.23> bits='0011'(4) basic_prep range=[3:0] int=3
       AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\genblk1[2].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000010'(32) basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000010'(32) unsized basic_prep range=[31:0] int=2
         AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1585,7 +1585,7 @@ Dumping AST after simplification:
               AST_IDENTIFIER <UHDM-integration-tests/tests/EnumConcat/dut.v:16.4-16.8> str='\c[2]' basic_prep
               AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:16.11-16.23> bits='0011'(4) basic_prep range=[3:0] int=3
       AST_LOCALPARAM <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> str='\genblk1[3].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000011'(32) basic_prep range=[31:0] int=3
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:14.0-14.0> bits='00000000000000000000000000000011'(32) unsized basic_prep range=[31:0] int=3
         AST_RANGE <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/EnumConcat/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
