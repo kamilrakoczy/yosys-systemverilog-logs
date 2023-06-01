@@ -1749,7 +1749,6 @@ Object 'work@top' of type 'design'
       Object '' of type 'cont_assign'
         Object 'a' of type 'ref_obj'
         Object '' of type 'operation'
-          Object '' of type 'int_typespec'
           Object 'Y' of type 'ref_obj'
       Object 'o' of type 'ref_obj'
     Object 'u_sub_5' of type 'module_inst'
@@ -1788,7 +1787,6 @@ Object 'work@top' of type 'design'
       Object '' of type 'cont_assign'
         Object 'a' of type 'ref_obj'
         Object '' of type 'operation'
-          Object '' of type 'int_typespec'
           Object 'Y' of type 'ref_obj'
       Object 'p' of type 'ref_obj'
     Object 'u_sub_10' of type 'module_inst'
@@ -1827,7 +1825,6 @@ Object 'work@top' of type 'design'
       Object '' of type 'cont_assign'
         Object 'a' of type 'ref_obj'
         Object '' of type 'operation'
-          Object '' of type 'int_typespec'
           Object 'Y' of type 'ref_obj'
       Object 'r' of type 'ref_obj'
     Object 'o' of type 'port'
@@ -1866,9 +1863,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22>
-          AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod\submodule\X=s32'00000000000000000000000000001010\Y=10'1111111111 (a);
@@ -1876,7 +1871,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = /** AST_CAST_SIZE **/;
+      assign a = Y;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1902,7 +1897,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> bits='1111111111'(10) basic_prep range=[9:0] int=1023
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod\submodule\X=s32'00000000000000000000000000001010\Y=10'1111111111 (a);
@@ -1910,7 +1905,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = 1'b 1;
+      assign a = 10'b 1111111111;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `$paramod\submodule\X=s32'00000000000000000000000000000101\Y=5'11111'.
@@ -1939,9 +1934,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22>
-          AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod\submodule\X=s32'00000000000000000000000000000101\Y=5'11111 (a);
@@ -1949,7 +1942,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = /** AST_CAST_SIZE **/;
+      assign a = Y;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1975,7 +1968,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> bits='11111'(5) basic_prep range=[4:0] int=31
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod\submodule\X=s32'00000000000000000000000000000101\Y=5'11111 (a);
@@ -1983,7 +1976,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = 1'b 1;
+      assign a = 5'b 11111;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `$paramod$70b1e9a88bf0860936e0cc64fa798360f916aae1\submodule'.
@@ -2012,9 +2005,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22>
-          AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> str='\Y'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod$70b1e9a88bf0860936e0cc64fa798360f916aae1\submodule (a);
@@ -2022,7 +2013,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = /** AST_CAST_SIZE **/;
+      assign a = Y;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -2048,7 +2039,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.11-5.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.15-5.22> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:5.20-5.21> bits='11111111111111111111'(20) basic_prep range=[19:0] int=1048575
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod$70b1e9a88bf0860936e0cc64fa798360f916aae1\submodule (a);
@@ -2056,7 +2047,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       output signed [31:0] a;
       /** AST_TYPEDEF **/
-      assign a = 1'b 1;
+      assign a = 20'b 11111111111111111111;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `\top'.
@@ -2383,7 +2374,7 @@ module \$paramod$70b1e9a88bf0860936e0cc64fa798360f916aae1\submodule (a);
   (* src = "UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:1.29-1.30" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd1;
+  assign a = 32'd1048575;
 endmodule
 Dumping module `$paramod\submodule\X=s32'00000000000000000000000000000101\Y=5'11111'.
 
@@ -2392,7 +2383,7 @@ module \$paramod\submodule\X=s32'00000000000000000000000000000101\Y=5'11111 (a);
   (* src = "UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:1.29-1.30" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd1;
+  assign a = 32'd31;
 endmodule
 Dumping module `$paramod\submodule\X=s32'00000000000000000000000000001010\Y=10'1111111111'.
 
@@ -2401,7 +2392,7 @@ module \$paramod\submodule\X=s32'00000000000000000000000000001010\Y=10'111111111
   (* src = "UHDM-integration-tests/tests/ParameterOfParametrizedTypeInSubmodule/top.sv:1.29-1.30" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd1;
+  assign a = 32'd1023;
 endmodule
 Dumping module `\top'.
 

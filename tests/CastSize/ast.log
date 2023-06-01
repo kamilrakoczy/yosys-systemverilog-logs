@@ -997,9 +997,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastSize/top.sv:4.11-4.20>
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.11-4.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/CastSize/top.sv:4.15-4.20>
-          AST_CONSTANT <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) range=[31:0] int=5
-          AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.18-4.19> str='\a'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.18-4.19> str='\a'
       AST_INITIAL <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0>
         AST_BLOCK <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0>
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0>
@@ -1010,7 +1008,7 @@ Dumping Verilog AST before simplification:
     module top(o);
       output [4:0] o;
       wire [15:0] a;
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = a;
       initial
         a = 16'b 0000000010101011;
     endmodule
@@ -1027,9 +1025,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastSize/top.sv:4.11-4.20> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.11-4.12> str='\o' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/CastSize/top.sv:4.15-4.20> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) basic_prep range=[31:0] int=5
-          AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.18-4.19> str='\a' basic_prep
+        AST_IDENTIFIER <UHDM-integration-tests/tests/CastSize/top.sv:4.18-4.19> str='\a' basic_prep
       AST_INITIAL <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> basic_prep
         AST_BLOCK <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/CastSize/top.sv:0.0-0.0> basic_prep
@@ -1040,7 +1036,7 @@ Dumping Verilog AST after simplification:
     module top(o);
       output [4:0] o;
       reg [15:0] a;
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = a;
       initial
         a = 16'b 0000000010101011;
     endmodule

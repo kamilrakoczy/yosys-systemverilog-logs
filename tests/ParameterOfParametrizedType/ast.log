@@ -1136,7 +1136,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object 'Y' of type 'ref_obj'
     Object 'o' of type 'int_var'
 Generating RTLIL representation for module `\top'.
@@ -1165,9 +1164,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.11-5.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.11-5.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.15-5.22>
-          AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.20-5.21> str='\Y'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.20-5.21> str='\Y'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1175,7 +1172,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       output signed [31:0] o;
       /** AST_TYPEDEF **/
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = Y;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1201,7 +1198,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.11-5.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.11-5.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.15-5.22> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:5.20-5.21> bits='11111111111111111111'(20) basic_prep range=[19:0] int=1048575
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
@@ -1209,7 +1206,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       output signed [31:0] o;
       /** AST_TYPEDEF **/
-      assign o = 1'b 1;
+      assign o = 20'b 11111111111111111111;
     endmodule
 --- END OF AST DUMP ---
 
@@ -1350,7 +1347,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/ParameterOfParametrizedType/top.sv:1.23-1.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign o = 32'd1;
+  assign o = 32'd1048575;
 endmodule
 
 4. Executing Verilog backend.

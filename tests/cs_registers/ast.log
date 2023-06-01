@@ -13916,7 +13916,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_PARAMETER <UHDM-integration-tests/tests/cs_registers/dut.sv:178.23-178.42> str='\CSR_MISA_MXL' multirange=[ 0 2 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='01'(2) signed range=[1:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='01'(2) range=[1:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:178.17-178.22> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -13980,7 +13980,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/cs_registers/dut.sv:272.25-272.81> str='\MISA_VALUE_RESULT' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='01000000000100000001000100000100'(32) signed range=[31:0] int=1074794756
+        AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='01000000000100000001000100000100'(32) range=[31:0] int=1074794756
         AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:272.18-272.24> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -14701,7 +14701,7 @@ Dumping AST before simplification:
                 AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='11111111'(8) range=[7:0] int=255
             AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:329.3-329.21>
               AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:329.3-329.16> str='\csr_rdata_int'
-              AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
             AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:330.3-330.23>
               AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:330.3-330.14> str='\illegal_csr'
               AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) range=[0:0]
@@ -14725,7 +14725,7 @@ Dumping AST before simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:338.18-351.10>
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:339.7-339.75>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:339.7-339.20> str='\csr_rdata_int'
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.86>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.41> str='\csr_rdata_int'
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.41>
@@ -14838,7 +14838,7 @@ Dumping AST before simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:358.14-369.10>
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:359.7-359.61>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:359.7-359.20> str='\csr_rdata_int'
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.77>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.34> str='\csr_rdata_int'
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.34>
@@ -14938,7 +14938,7 @@ Dumping AST before simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:375.14-386.8>
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:376.7-376.61>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:376.7-376.20> str='\csr_rdata_int'
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.75>
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.34> str='\csr_rdata_int'
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.34>
@@ -16668,7 +16668,7 @@ Dumping Verilog AST before simplification:
           /** AST_ASSERT **/
           /** AST_ASSERT **/
           /** AST_ASSERT **/
-          csr_rdata_int = 0;
+          csr_rdata_int = 1'b 0;
           illegal_csr = 1'b 0;
           case (csr_addr_i)
             CSR_MHARTID:
@@ -16679,7 +16679,7 @@ Dumping Verilog AST before simplification:
               end
             CSR_MSTATUS:
               begin
-                csr_rdata_int = 0;
+                csr_rdata_int = 1'b 0;
                 csr_rdata_int[3] = mstatus_q[5:5];
                 csr_rdata_int[7] = mstatus_q[4:4];
                 csr_rdata_int[12:11] = mstatus_q[3:2];
@@ -16701,7 +16701,7 @@ Dumping Verilog AST before simplification:
               end
             CSR_MIE:
               begin
-                csr_rdata_int = 0;
+                csr_rdata_int = 1'b 0;
                 csr_rdata_int[3] = mie_q[17:17];
                 csr_rdata_int[7] = mie_q[16:16];
                 csr_rdata_int[11] = mie_q[15:15];
@@ -16720,7 +16720,7 @@ Dumping Verilog AST before simplification:
               end
             CSR_MIP:
               begin
-                csr_rdata_int = 0;
+                csr_rdata_int = 1'b 0;
                 csr_rdata_int[3] = mip[17:17];
                 csr_rdata_int[7] = mip[16:16];
                 csr_rdata_int[11] = mip[15:15];
@@ -18829,7 +18829,7 @@ Dumping AST after simplification:
                 AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
             AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:329.3-329.21> basic_prep
               AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:329.3-329.16> str='\csr_rdata_int' basic_prep
-              AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+              AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
             AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:330.3-330.23> basic_prep
               AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:330.3-330.14> str='\illegal_csr' basic_prep
               AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) basic_prep range=[0:0]
@@ -18859,7 +18859,7 @@ Dumping AST after simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:338.18-351.10> basic_prep
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:339.7-339.75> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:339.7-339.20> str='\csr_rdata_int' basic_prep
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.86> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.41> str='\csr_rdata_int' basic_prep
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:340.7-340.41> basic_prep range=[3:3]
@@ -19011,7 +19011,7 @@ Dumping AST after simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:358.14-369.10> basic_prep
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:359.7-359.61> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:359.7-359.20> str='\csr_rdata_int' basic_prep
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.77> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.34> str='\csr_rdata_int' basic_prep
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:360.7-360.34> basic_prep range=[3:3]
@@ -19141,7 +19141,7 @@ Dumping AST after simplification:
                 AST_BLOCK <UHDM-integration-tests/tests/cs_registers/dut.sv:375.14-386.8> basic_prep
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:376.7-376.61> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:376.7-376.20> str='\csr_rdata_int' basic_prep
-                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+                    AST_CONSTANT <UHDM-integration-tests/tests/cs_registers/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
                   AST_ASSIGN_EQ <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.75> basic_prep
                     AST_IDENTIFIER <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.34> str='\csr_rdata_int' basic_prep
                       AST_RANGE <UHDM-integration-tests/tests/cs_registers/dut.sv:377.7-377.34> basic_prep range=[3:3]
@@ -21438,7 +21438,7 @@ Dumping Verilog AST after simplification:
               \$formal$UHDM-integration-tests/tests/cs_registers/dut.sv:327$4_CHECK  <= |((pmp_cfg_rdata[31:24])==(8'b 11111111));
               \$formal$UHDM-integration-tests/tests/cs_registers/dut.sv:327$4_EN  <= 1'b 1;
             end
-            csr_rdata_int = 0;
+            csr_rdata_int = 1'b 0;
             illegal_csr = 1'b 0;
             case (csr_addr_i)
               12'b 111100010100:
@@ -21452,7 +21452,7 @@ Dumping Verilog AST after simplification:
                 end
               12'b 001100000000:
                 begin
-                  csr_rdata_int = 0;
+                  csr_rdata_int = 1'b 0;
                   csr_rdata_int[3:3] = mstatus_q[5:5];
                   csr_rdata_int[7:7] = mstatus_q[4:4];
                   csr_rdata_int[12:11] = mstatus_q[3:2];
@@ -21495,7 +21495,7 @@ Dumping Verilog AST after simplification:
                 end
               12'b 001100000100:
                 begin
-                  csr_rdata_int = 0;
+                  csr_rdata_int = 1'b 0;
                   csr_rdata_int[3:3] = mie_q[17:17];
                   csr_rdata_int[7:7] = mie_q[16:16];
                   csr_rdata_int[11:11] = mie_q[15:15];
@@ -21529,7 +21529,7 @@ Dumping Verilog AST after simplification:
                 end
               12'b 001101000100:
                 begin
-                  csr_rdata_int = 0;
+                  csr_rdata_int = 1'b 0;
                   csr_rdata_int[3:3] = mip[17:17];
                   csr_rdata_int[7:7] = mip[16:16];
                   csr_rdata_int[11:11] = mip[15:15];

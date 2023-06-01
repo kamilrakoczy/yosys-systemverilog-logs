@@ -1230,16 +1230,6 @@ Object 'work@dut' of type 'design'
     Object '' of type 'cont_assign'
       Object 'b' of type 'ref_obj'
       Object '' of type 'operation'
-        Object 'pkg::enum_t' of type 'enum_typespec'
-          Object '' of type 'logic_typespec'
-            Object '' of type 'range'
-              Object '' of type 'constant'
-              Object '' of type 'constant'
-          Object 'ONE' of type 'enum_const'
-          Object 'TWO' of type 'enum_const'
-          Object 'THREE' of type 'enum_const'
-          Object 'FOUR' of type 'enum_const'
-          Object 'FIVE' of type 'enum_const'
         Object 'a' of type 'ref_obj'
     Object 'b' of type 'enum_var'
       Object 'pkg::enum_t' of type 'enum_typespec'
@@ -1278,9 +1268,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/PackageCast/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/PackageCast/dut.v:6.11-6.30>
         AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.11-6.12> str='\b'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/PackageCast/dut.v:6.15-6.30>
-          AST_CONSTANT <UHDM-integration-tests/tests/PackageCast/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.28-6.29> str='\a'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.28-6.29> str='\a'
       AST_ENUM <UHDM-integration-tests/tests/PackageCast/dut.v:2.4-2.67> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/PackageCast/dut.v:2.30-2.33> str='\pkg::ONE' logic basic_prep range=[7:0]
           ATTR \enum_base_type:
@@ -1336,7 +1324,7 @@ Dumping Verilog AST before simplification:
       (* enum_value_00000011 = "\FOUR" *)
       (* enum_value_00000100 = "\FIVE" *)
       output reg [7:0] b;
-      assign b = /** AST_CAST_SIZE **/;
+      assign b = a;
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule
@@ -1367,9 +1355,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/PackageCast/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/PackageCast/dut.v:6.11-6.30> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.11-6.12> str='\b' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/PackageCast/dut.v:6.15-6.30> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/PackageCast/dut.v:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.28-6.29> str='\a' basic_prep
+        AST_IDENTIFIER <UHDM-integration-tests/tests/PackageCast/dut.v:6.28-6.29> str='\a' basic_prep
       AST_ENUM <UHDM-integration-tests/tests/PackageCast/dut.v:2.4-2.67> str='$enum0' logic basic_prep
         AST_ENUM_ITEM <UHDM-integration-tests/tests/PackageCast/dut.v:2.30-2.33> str='\pkg::ONE' logic basic_prep range=[7:0]
           ATTR \enum_base_type:
@@ -1425,7 +1411,7 @@ Dumping Verilog AST after simplification:
       (* enum_value_00000011 = "\FOUR" *)
       (* enum_value_00000100 = "\FIVE" *)
       output reg [7:0] b;
-      assign b = /** AST_CAST_SIZE **/;
+      assign b = a;
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
     endmodule
@@ -1580,7 +1566,7 @@ module dut(clk, a, b);
   (* src = "UHDM-integration-tests/tests/PackageCast/dut.v:5.24-5.27" *)
   input clk;
   wire clk;
-  assign b = { 7'h00, a[0] };
+  assign b = a;
 endmodule
 
 4. Executing Verilog backend.
