@@ -1893,12 +1893,12 @@ Dumping AST before simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
             AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_PARAMETER <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:2.25-2.35> str='\B0' multirange=[ 0 2 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='01'(2) signed range=[1:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='01'(2) range=[1:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:2.19-2.24> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_PARAMETER <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:3.25-3.35> str='\B1' multirange=[ 0 2 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='10'(2) signed range=[1:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='10'(2) range=[1:0] int=2
         AST_RANGE <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:3.19-3.24> basic_prep range=[1:0]
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
           AST_CONSTANT <UHDM-integration-tests/tests/ImportedEnumCast/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

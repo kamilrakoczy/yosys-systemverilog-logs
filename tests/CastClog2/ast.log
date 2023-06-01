@@ -996,7 +996,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'integer_typespec'
         Object '' of type 'constant'
 Generating RTLIL representation for module `\top'.
 Dumping AST before simplification:
@@ -1012,15 +1011,13 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastClog2/top.sv:5.11-5.29>
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2/top.sv:5.11-5.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/CastClog2/top.sv:5.15-5.29>
-          AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
+        AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed range=[31:0] int=31
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
       /** AST_PARAMETER **/
       output [1:0] o;
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = 31;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1036,13 +1033,13 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastClog2/top.sv:5.11-5.29> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastClog2/top.sv:5.11-5.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:5.15-5.29> bits='1'(1) signed basic_prep range=[0:0] int=4294967295
+        AST_CONSTANT <UHDM-integration-tests/tests/CastClog2/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
       /** AST_PARAMETER **/
       output [1:0] o;
-      assign o = 1'b 1;
+      assign o = 31;
     endmodule
 --- END OF AST DUMP ---
 

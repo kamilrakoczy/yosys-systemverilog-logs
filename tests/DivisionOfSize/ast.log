@@ -1274,7 +1274,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object 'part_buf_data' of type 'ref_obj'
     Object 'o' of type 'int_var'
     Object 'part_buf_data' of type 'logic_var'
@@ -1304,16 +1303,14 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.11-12.34>
         AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.11-12.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.15-12.34>
-          AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.20-12.33> str='\part_buf_data'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.20-12.33> str='\part_buf_data'
       AST_INITIAL <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0>
         AST_BLOCK <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0>
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0>
             AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> str='\part_buf_data'
             AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='111'(3) range=[2:0] int=7
       AST_PARAMETER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.26-6.49> str='\otp_ctrl_part_pkg::PartInvDefault' basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.43-6.49> bits='001'(3) basic_prep range=[2:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.46-6.48> bits='001'(3) basic_prep range=[2:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.20-2.25> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1324,7 +1321,7 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       output signed [31:0] o;
       wire [2:0] part_buf_data;
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = part_buf_data;
       initial
         part_buf_data = 3'b 111;
     endmodule
@@ -1346,16 +1343,14 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.11-12.34> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.11-12.12> str='\o' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.15-12.34> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.20-12.33> str='\part_buf_data' basic_prep
+        AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:12.20-12.33> str='\part_buf_data' basic_prep
       AST_INITIAL <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> basic_prep
         AST_BLOCK <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> basic_prep
             AST_IDENTIFIER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> str='\part_buf_data' basic_prep
             AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='111'(3) basic_prep range=[2:0] int=7
       AST_PARAMETER <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.26-6.49> str='\otp_ctrl_part_pkg::PartInvDefault' basic_prep range=[2:0] multirange=[ 0 3 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.43-6.49> bits='001'(3) basic_prep range=[2:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.46-6.48> bits='001'(3) basic_prep range=[2:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/DivisionOfSize/top.sv:2.20-2.25> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/DivisionOfSize/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1366,7 +1361,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       output signed [31:0] o;
       reg [2:0] part_buf_data;
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = part_buf_data;
       initial
         part_buf_data = 3'b 111;
     endmodule
@@ -1516,7 +1511,7 @@ module top(o);
   wire [31:0] o;
   (* src = "UHDM-integration-tests/tests/DivisionOfSize/top.sv:11.40-11.58" *)
   wire [2:0] part_buf_data;
-  assign o = 32'd1;
+  assign o = 32'd7;
   assign part_buf_data = 3'h7;
 endmodule
 

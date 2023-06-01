@@ -1013,7 +1013,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object 'mubi4_hi_value' of type 'func_call'
     Object 'o' of type 'int_var'
 Generating RTLIL representation for module `\top'.
@@ -1066,9 +1065,7 @@ Dumping AST before simplification:
           AST_IDENTIFIER <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:9.14-9.21> str='\MuBi4Hi'
       AST_ASSIGN <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.11-12.37>
         AST_IDENTIFIER <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.11-12.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.15-12.37>
-          AST_CONSTANT <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_FCALL <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.20-12.36> str='\mubi4_hi_value'
+        AST_FCALL <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.20-12.36> str='\mubi4_hi_value'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1077,7 +1074,7 @@ Dumping Verilog AST before simplification:
       /** AST_FUNCTION **/
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = /** AST_FCALL **/;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1129,7 +1126,7 @@ Dumping AST after simplification:
           AST_IDENTIFIER <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:9.14-9.21> str='\MuBi4Hi'
       AST_ASSIGN <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.11-12.37> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.11-12.12> str='\o' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.15-12.37> bits='1'(1) basic_prep range=[0:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:12.20-12.36> bits='0101'(4) basic_prep range=[3:0] int=5
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
@@ -1138,7 +1135,7 @@ Dumping Verilog AST after simplification:
       /** AST_FUNCTION **/
       /** AST_ENUM **/
       /** AST_TYPEDEF **/
-      assign o = 1'b 1;
+      assign o = 4'b 0101;
     endmodule
 --- END OF AST DUMP ---
 
@@ -1279,7 +1276,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/FunctionReturnEnum/top.sv:1.23-1.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign o = 32'd1;
+  assign o = 32'd5;
 endmodule
 
 4. Executing Verilog backend.
