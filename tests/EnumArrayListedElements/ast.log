@@ -1016,6 +1016,7 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
+        Object '' of type 'int_typespec'
         Object 'x' of type 'ref_obj'
     Object 'o' of type 'int_var'
     Object 'x' of type 'packed_array_var'
@@ -1051,7 +1052,9 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.11-10.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.11-10.12> str='\o'
-        AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.20-10.21> str='\x'
+        AST_CAST_SIZE <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.15-10.22>
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.20-10.21> str='\x'
       AST_INITIAL <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0>
         AST_BLOCK <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0>
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0>
@@ -1089,7 +1092,7 @@ Dumping Verilog AST before simplification:
       (* enum_value_1010 = "\On" *)
       (* enum_value_1111 = "\Off" *)
       reg [7:0] x;
-      assign o = x;
+      assign o = /** AST_CAST_SIZE **/;
       initial
         x = {4'b 1010, 4'b 1111};
       /** AST_ENUM **/
@@ -1114,7 +1117,9 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.11-10.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.11-10.12> str='\o' basic_prep
-        AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.20-10.21> str='\x' basic_prep
+        AST_CAST_SIZE <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.15-10.22> basic_prep
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:10.20-10.21> str='\x' basic_prep
       AST_INITIAL <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> basic_prep
         AST_BLOCK <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:0.0-0.0> basic_prep
@@ -1150,7 +1155,7 @@ Dumping Verilog AST after simplification:
       (* enum_value_1010 = "\On" *)
       (* enum_value_1111 = "\Off" *)
       reg [7:0] x;
-      assign o = x;
+      assign o = /** AST_CAST_SIZE **/;
       initial
         x = 8'b 10101111;
       /** AST_ENUM **/
@@ -1305,7 +1310,7 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/EnumArrayListedElements/top.sv:9.26-9.56" *)
   (* wiretype = "\\lc_tx_t" *)
   wire [7:0] x;
-  assign o = 32'd175;
+  assign o = 32'd1;
   assign x = 8'haf;
 endmodule
 

@@ -1068,7 +1068,7 @@ Dumping AST before simplification:
               AST_BLOCK <UHDM-integration-tests/tests/IndexedPartSelectInUniqueCase/top.sv:0.0-0.0>
                 AST_ASSIGN_EQ <UHDM-integration-tests/tests/IndexedPartSelectInUniqueCase/top.sv:12.19-12.25>
                   AST_IDENTIFIER <UHDM-integration-tests/tests/IndexedPartSelectInUniqueCase/top.sv:12.19-12.20> str='\o'
-                  AST_CONSTANT <UHDM-integration-tests/tests/IndexedPartSelectInUniqueCase/top.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
+                  AST_CONSTANT <UHDM-integration-tests/tests/IndexedPartSelectInUniqueCase/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1084,7 +1084,7 @@ Dumping Verilog AST before simplification:
           0:
             o = operation_i[(63)+((0)+((((((0)+(32))-(1'b 1))-(0))+(1))-(((63)-(32))+(1)))):(32)+(0)];
           default:
-            o = 1'b 0;
+            o = 0;
         endcase
     endmodule
 --- END OF AST DUMP ---

@@ -4408,7 +4408,7 @@ Dumping AST before simplification:
                   AST_BLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:87.18-89.8>
                     AST_ASSIGN_LE <UHDM-integration-tests/tests/genscope_cells/dut.sv:88.7-88.22>
                       AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:88.7-88.16> str='\counter_q'
-                      AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
+                      AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
               AST_COND <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0>
                 AST_DEFAULT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0>
                 AST_BLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0>
@@ -4434,7 +4434,7 @@ Dumping AST before simplification:
             AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:98.12-98.36>
               AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000111111'(32) signed range=[31:0] int=63
               AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
-          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='0'(1) unsized range=[0:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
         AST_ASSIGN <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.12-99.69>
           AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.12-99.31> str='\unused_counter_load'
           AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.40-99.69> str='\counter_load'
@@ -4494,7 +4494,7 @@ Dumping Verilog AST before simplification:
       always @(posedge clk_i, negedge rst_ni)
         case (|(!(rst_ni)))
           1'b 1:
-            counter_q <= 1'b 0;
+            counter_q <= 0;
           default:
             counter_q <= counter_d;
         endcase
@@ -4656,7 +4656,7 @@ Dumping AST after simplification:
                   AST_BLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:87.18-89.8> basic_prep
                     AST_ASSIGN_LE <UHDM-integration-tests/tests/genscope_cells/dut.sv:88.7-88.22> basic_prep
                       AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:88.7-88.16> str='\counter_q' basic_prep
-                      AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
+                      AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
               AST_COND <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep
                 AST_DEFAULT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep
                 AST_BLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep
@@ -4686,7 +4686,7 @@ Dumping AST after simplification:
           AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:98.12-98.36> basic_prep range=[63:10]
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000111111'(32) signed basic_prep range=[31:0] int=63
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed basic_prep range=[31:0] int=10
-        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='0'(1) unsized basic_prep range=[0:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.12-99.69> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.12-99.31> str='\g_counter_narrow.unused_counter_load' basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/genscope_cells/dut.sv:99.40-99.69> str='\counter_load' basic_prep
@@ -4741,7 +4741,7 @@ Dumping Verilog AST after simplification:
       always @(posedge clk_i, negedge rst_ni)
         case (|(!(rst_ni)))
           1'b 1:
-            counter_q <= 1'b 0;
+            counter_q <= 0;
           default:
             counter_q <= counter_d;
         endcase
@@ -4749,7 +4749,7 @@ Dumping Verilog AST after simplification:
       assign counter_val_o = counter;
       assign counter_val_o = counter;
       assign counter[9:0] = counter_q;
-      assign counter[63:10] = 1'b 0;
+      assign counter[63:10] = 0;
       assign \g_counter_narrow.unused_counter_load  = counter_load[63:10];
     endmodule
 --- END OF AST DUMP ---
@@ -4790,7 +4790,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_GENBLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.41-22.4> str='\gen_modules[0]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000000'(32) range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -4840,7 +4840,7 @@ Dumping AST before simplification:
                   AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000001000000'(32) range=[31:0] int=64
       AST_GENBLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.41-22.4> str='\gen_modules[1]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000001'(32) unsized range=[31:0] int=1
+          AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000001'(32) range=[31:0] int=1
           AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -4941,7 +4941,7 @@ Dumping AST after simplification:
       AST_GENBLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.41-22.4> str='\gen_modules[0]' basic_prep
       AST_GENBLOCK <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.41-22.4> str='\gen_modules[1]' basic_prep
       AST_LOCALPARAM <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> str='\gen_modules[0].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
         AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -4974,7 +4974,7 @@ Dumping AST after simplification:
               AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000111111'(32) basic_prep range=[31:0] int=63
               AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> str='\gen_modules[1].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000001'(32) unsized basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:12.0-12.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/genscope_cells/dut.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

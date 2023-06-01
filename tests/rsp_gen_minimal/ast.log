@@ -3855,7 +3855,9 @@ Dumping AST before simplification:
         AST_BLOCK <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:6.15-15.6> str='\p_encode'
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.5-7.25>
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.5-7.11> str='\data_o'
-            AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.18-7.24> str='\data_i'
+            AST_CAST_SIZE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.14-7.25>
+              AST_CONSTANT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> bits='00000000000000000000000001000000'(32) range=[31:0] int=64
+              AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.18-7.24> str='\data_i'
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.50>
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.15> str='\data_o'
               AST_RANGE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.15>
@@ -4029,7 +4031,7 @@ Dumping Verilog AST before simplification:
       (* always_comb = 1 *)
       always @*
         begin
-          data_o = data_i;
+          data_o = /** AST_CAST_SIZE **/;
           data_o[57] = ^((data_o)&(64'b 0000000100000011111111111111100000000000000000000111111111111111));
           data_o[58] = ^((data_o)&(64'b 0000000101111100000111111111100000000001111111111000000000011111));
           data_o[59] = ^((data_o)&(64'b 0000000110111101111000011111100001111110000001111000000111100001));
@@ -4061,7 +4063,9 @@ Dumping AST after simplification:
         AST_BLOCK <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:6.15-15.6> basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.5-7.25> basic_prep
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.5-7.11> str='\data_o' basic_prep
-            AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.18-7.24> str='\data_i' basic_prep
+            AST_CAST_SIZE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.14-7.25> basic_prep
+              AST_CONSTANT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> bits='00000000000000000000000001000000'(32) basic_prep range=[31:0] int=64
+              AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:7.18-7.24> str='\data_i' basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.50> basic_prep
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.15> str='\data_o' basic_prep
               AST_RANGE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:8.5-8.15> basic_prep range=[57:57]
@@ -4235,7 +4239,7 @@ Dumping Verilog AST after simplification:
       (* always_comb = 1 *)
       always @*
         begin
-          data_o = data_i;
+          data_o = /** AST_CAST_SIZE **/;
           data_o[57:57] = ^((data_o)&(64'b 0000000100000011111111111111100000000000000000000111111111111111));
           data_o[58:58] = ^((data_o)&(64'b 0000000101111100000111111111100000000001111111111000000000011111));
           data_o[59:59] = ^((data_o)&(64'b 0000000110111101111000011111100001111110000001111000000111100001));
@@ -4324,7 +4328,9 @@ Dumping AST before simplification:
       AST_CELL <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\u_rsp_gen'
         AST_CELLTYPE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> str='\prim_secded_64_57_enc'
         AST_ARGUMENT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\data_i'
-          AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.17-79.20> str='\rsp'
+          AST_CAST_SIZE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.13-79.21>
+            AST_CONSTANT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> bits='00000000000000000000000000111001'(32) range=[31:0] int=57
+            AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.17-79.20> str='\rsp'
         AST_ARGUMENT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\data_o'
           AST_CONCAT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:80.13-80.39>
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:80.24-80.38> str='\unused_payload'
@@ -4620,7 +4626,9 @@ Dumping AST after simplification:
       AST_CELL <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\u_rsp_gen' basic_prep
         AST_CELLTYPE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> str='\prim_secded_64_57_enc' basic_prep
         AST_ARGUMENT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\data_i' basic_prep
-          AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.17-79.20> str='\rsp' basic_prep
+          AST_CAST_SIZE <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.13-79.21> basic_prep
+            AST_CONSTANT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:0.0-0.0> bits='00000000000000000000000000111001'(32) basic_prep range=[31:0] int=57
+            AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:79.17-79.20> str='\rsp' basic_prep
         AST_ARGUMENT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:78.3-81.5> str='\data_o' basic_prep
           AST_CONCAT <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:80.13-80.39> basic_prep
             AST_IDENTIFIER <UHDM-integration-tests/tests/rsp_gen_minimal/dut.v:80.24-80.38> str='\unused_payload' basic_prep
@@ -4964,7 +4972,6 @@ Used module:     \prim_secded_64_57_enc
 Top module:  \dut
 Used module:     \prim_secded_64_57_enc
 Removed 0 unused modules.
-Warning: Resizing cell port dut.u_rsp_gen.data_i from 6 bits to 57 bits.
 
 2.2. Executing PROC pass (convert processes to netlists).
 
@@ -5327,7 +5334,7 @@ endmodule
 Dumping module `\dut'.
 Dumping module `\prim_secded_64_57_enc'.
 
-Warnings: 60 unique messages, 119 total
+Warnings: 59 unique messages, 118 total
 
 Yosys 0.29+42 (git sha1 43b807fe6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
