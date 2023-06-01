@@ -1106,7 +1106,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object 'a[0][0].min_v' of type 'hier_path'
           Object 'a' of type 'bit_select'
             Object '' of type 'constant'
@@ -1155,23 +1154,21 @@ Dumping AST before simplification:
               AST_MUL <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
                 AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
                 AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) unsized range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='1'(1) unsized range=[0:0] int=1
       AST_ASSIGN <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.11-8.34>
         AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.11-8.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.15-8.34>
-          AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.20-8.33> str='\a' basic_prep
-            AST_RANGE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
-              AST_ADD <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
-                AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001001'(32) signed range=[31:0] int=9
-                AST_MUL <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
-                  AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
-                  AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-              AST_ADD <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+        AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.20-8.33> str='\a' basic_prep
+          AST_RANGE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+            AST_ADD <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+              AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001001'(32) signed range=[31:0] int=9
+              AST_MUL <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+                AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
                 AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
-                AST_MUL <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
-                  AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
-                  AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
+            AST_ADD <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+              AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
+              AST_MUL <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0>
+                AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001010'(32) signed range=[31:0] int=10
+                AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1179,8 +1176,8 @@ Dumping Verilog AST before simplification:
       (* wiretype = "\filter_ctl_t" *)
       wire [59:0] a;
       /** AST_TYPEDEF **/
-      assign a[(9)+((10)*(0)):(0)+((10)*(0))] = 1;
-      assign o = /** AST_CAST_SIZE **/;
+      assign a[(9)+((10)*(0)):(0)+((10)*(0))] = 1'b 1;
+      assign o = a[(9)+((10)*(0)):(0)+((10)*(0))];
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1203,15 +1200,13 @@ Dumping AST after simplification:
           AST_RANGE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> basic_prep range=[9:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001001'(32) signed basic_prep range=[31:0] int=9
             AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) unsized basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='1'(1) unsized basic_prep range=[0:0] int=1
       AST_ASSIGN <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.11-8.34> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.11-8.12> str='\o' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.15-8.34> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.20-8.33> str='\a' basic_prep
-            AST_RANGE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> basic_prep range=[9:0]
-              AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001001'(32) signed basic_prep range=[31:0] int=9
-              AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
+        AST_IDENTIFIER <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:8.20-8.33> str='\a' basic_prep
+          AST_RANGE <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> basic_prep range=[9:0]
+            AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000001001'(32) signed basic_prep range=[31:0] int=9
+            AST_CONSTANT <UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
@@ -1219,8 +1214,8 @@ Dumping Verilog AST after simplification:
       (* wiretype = "\filter_ctl_t" *)
       wire [59:0] a;
       /** AST_TYPEDEF **/
-      assign a[9:0] = 1;
-      assign o = /** AST_CAST_SIZE **/;
+      assign a[9:0] = 1'b 1;
+      assign o = a[9:0];
     endmodule
 --- END OF AST DUMP ---
 
@@ -1365,8 +1360,8 @@ module top(o);
   (* src = "UHDM-integration-tests/tests/MemberSelectOf2DStructPackedArray/top.sv:1.23-1.24" *)
   output [31:0] o;
   wire [31:0] o;
-  assign a[9:0] = 10'h001;
-  assign o = 32'd1;
+  assign a[9:0] = 10'h3ff;
+  assign o = 32'd1023;
 endmodule
 
 4. Executing Verilog backend.

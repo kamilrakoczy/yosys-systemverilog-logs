@@ -1113,7 +1113,6 @@ Object 'work@top' of type 'design'
       Object '' of type 'cont_assign'
         Object 'a' of type 'ref_obj'
         Object '' of type 'operation'
-          Object '' of type 'int_typespec'
           Object 'C' of type 'ref_obj'
       Object 'o' of type 'ref_obj'
     Object 'o' of type 'port'
@@ -1124,9 +1123,9 @@ Generating RTLIL representation for module `$paramod$1a352b0ab59d4a098ab537b4577
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:1.1-7.10> str='$paramod$1a352b0ab59d4a098ab537b457745572cf560a55\dut'
       AST_PARAMETER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:2.14-2.20> str='\A' range=[0:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000001110000100000'(32) signed unsized range=[31:0] int=7200
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000001110000100000'(32) unsized range=[31:0] int=7200
       AST_PARAMETER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:3.14-3.20> str='\B' range=[0:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000011100001000'(32) signed unsized range=[31:0] int=1800
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000011100001000'(32) unsized range=[31:0] int=1800
       AST_LOCALPARAM <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:4.19-4.28> str='\C' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000000000000100'(32) range=[31:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> basic_prep range=[31:0]
@@ -1138,9 +1137,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.11-6.22>
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.11-6.12> str='\a'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.15-6.22>
-          AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.20-6.21> str='\C'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.20-6.21> str='\C'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod$1a352b0ab59d4a098ab537b457745572cf560a55\dut (a);
@@ -1148,15 +1145,15 @@ Dumping Verilog AST before simplification:
       /** AST_PARAMETER **/
       /** AST_LOCALPARAM **/
       output signed [31:0] a;
-      assign a = /** AST_CAST_SIZE **/;
+      assign a = C;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
     AST_MODULE <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:1.1-7.10> str='$paramod$1a352b0ab59d4a098ab537b457745572cf560a55\dut' basic_prep
       AST_PARAMETER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:2.14-2.20> str='\A' basic_prep range=[0:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000001110000100000'(32) signed unsized basic_prep range=[31:0] int=7200
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000001110000100000'(32) unsized basic_prep range=[31:0] int=7200
       AST_PARAMETER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:3.14-3.20> str='\B' basic_prep range=[0:0]
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000011100001000'(32) signed unsized basic_prep range=[31:0] int=1800
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000011100001000'(32) unsized basic_prep range=[31:0] int=1800
       AST_LOCALPARAM <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:4.19-4.28> str='\C' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
         AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> basic_prep range=[31:0]
@@ -1168,7 +1165,7 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.11-6.22> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.11-6.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.15-6.22> bits='0'(1) basic_prep range=[0:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:6.20-6.21> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod$1a352b0ab59d4a098ab537b457745572cf560a55\dut (a);
@@ -1176,7 +1173,7 @@ Dumping Verilog AST after simplification:
       /** AST_PARAMETER **/
       /** AST_LOCALPARAM **/
       output signed [31:0] a;
-      assign a = 1'b 0;
+      assign a = 4;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `\top'.
@@ -1397,7 +1394,7 @@ module \$paramod$1a352b0ab59d4a098ab537b457745572cf560a55\dut (a);
   (* src = "UHDM-integration-tests/tests/ParameterWithUnderscoreValueDivided/top.sv:1.23-1.24" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd0;
+  assign a = 32'd4;
 endmodule
 Dumping module `\top'.
 
