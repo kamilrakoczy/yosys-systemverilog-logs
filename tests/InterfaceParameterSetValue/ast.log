@@ -1022,7 +1022,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object 'u_sim_sram_if.start_addr' of type 'hier_path'
           Object 'u_sim_sram_if' of type 'ref_obj'
           Object 'start_addr' of type 'ref_obj'
@@ -1043,9 +1042,7 @@ Dumping AST before simplification:
         AST_CELLTYPE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> str='\sim_sram_if'
       AST_ASSIGN <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.11-8.45>
         AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.11-8.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.15-8.45>
-          AST_CONSTANT <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.20-8.44> str='\u_sim_sram_if.start_addr'
+        AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.20-8.44> str='\u_sim_sram_if.start_addr'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1053,7 +1050,7 @@ Dumping Verilog AST before simplification:
       initial
         start_addr = 16'b 1111111111111111;
       /** AST_CELL **/
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = \u_sim_sram_if.start_addr ;
     endmodule
 --- END OF AST DUMP ---
 Warning: wire '\start_addr' is assigned in a block at UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0.
@@ -1072,9 +1069,7 @@ Dumping AST after simplification:
         AST_CELLTYPE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> str='\sim_sram_if' basic_prep
       AST_ASSIGN <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.11-8.45> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.11-8.12> str='\o' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.15-8.45> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-          AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.20-8.44> str='\u_sim_sram_if.start_addr' basic_prep
+        AST_IDENTIFIER <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8.20-8.44> str='\u_sim_sram_if.start_addr' basic_prep
       AST_AUTOWIRE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> str='\start_addr' basic_prep
       AST_AUTOWIRE <UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0> str='\u_sim_sram_if.start_addr' basic_prep
 --- END OF AST DUMP ---
@@ -1086,7 +1081,7 @@ Dumping Verilog AST after simplification:
       initial
         start_addr = 16'b 1111111111111111;
       /** AST_CELL **/
-      assign o = /** AST_CAST_SIZE **/;
+      assign o = \u_sim_sram_if.start_addr ;
     endmodule
 --- END OF AST DUMP ---
 UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:8: Warning: Identifier `\u_sim_sram_if.start_addr' is implicitly declared.
@@ -1187,8 +1182,23 @@ Removed 1 unused cells and 2 unused wires.
 2.5. Executing CHECK pass (checking for obvious problems).
 Checking module sim_sram_if...
 Checking module top...
+Warning: Wire top.\o [15] is used but has no driver.
+Warning: Wire top.\o [14] is used but has no driver.
+Warning: Wire top.\o [13] is used but has no driver.
+Warning: Wire top.\o [12] is used but has no driver.
+Warning: Wire top.\o [11] is used but has no driver.
+Warning: Wire top.\o [10] is used but has no driver.
+Warning: Wire top.\o [9] is used but has no driver.
+Warning: Wire top.\o [8] is used but has no driver.
+Warning: Wire top.\o [7] is used but has no driver.
+Warning: Wire top.\o [6] is used but has no driver.
+Warning: Wire top.\o [5] is used but has no driver.
+Warning: Wire top.\o [4] is used but has no driver.
+Warning: Wire top.\o [3] is used but has no driver.
+Warning: Wire top.\o [2] is used but has no driver.
+Warning: Wire top.\o [1] is used but has no driver.
 Warning: Wire top.\o [0] is used but has no driver.
-Found and reported 1 problems.
+Found and reported 16 problems.
 
 2.6. Executing OPT pass (performing simple optimizations).
 
@@ -1231,13 +1241,10 @@ Optimizing module top.
 2.6.8. Finished OPT passes. (There is nothing left to do.)
 
 2.7. Executing WREDUCE pass (reducing word size of cells).
-Removed top 15 bits (of 16) from wire top.u_sim_sram_if.start_addr.
 
 2.8. Executing OPT_CLEAN pass (remove unused cells and wires).
 Finding unused cells or wires in module \sim_sram_if..
 Finding unused cells or wires in module \top..
-Removed 0 unused cells and 1 unused wires.
-<suppressed ~1 debug messages>
 
 2.9. Executing MEMORY_COLLECT pass (generating $mem cells).
 
@@ -1274,9 +1281,9 @@ Finding unused cells or wires in module \top..
 === top ===
 
    Number of wires:                  3
-   Number of wire bits:             34
+   Number of wire bits:             49
    Number of public wires:           3
-   Number of public wire bits:      34
+   Number of public wire bits:      49
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1287,9 +1294,9 @@ Finding unused cells or wires in module \top..
    top                               1
 
    Number of wires:                  3
-   Number of wire bits:             34
+   Number of wire bits:             49
    Number of public wires:           3
-   Number of public wire bits:      34
+   Number of public wire bits:      49
    Number of memories:               0
    Number of memory bits:            0
    Number of processes:              0
@@ -1298,8 +1305,23 @@ Finding unused cells or wires in module \top..
 2.12. Executing CHECK pass (checking for obvious problems).
 Checking module sim_sram_if...
 Checking module top...
+Warning: Wire top.\o [15] is used but has no driver.
+Warning: Wire top.\o [14] is used but has no driver.
+Warning: Wire top.\o [13] is used but has no driver.
+Warning: Wire top.\o [12] is used but has no driver.
+Warning: Wire top.\o [11] is used but has no driver.
+Warning: Wire top.\o [10] is used but has no driver.
+Warning: Wire top.\o [9] is used but has no driver.
+Warning: Wire top.\o [8] is used but has no driver.
+Warning: Wire top.\o [7] is used but has no driver.
+Warning: Wire top.\o [6] is used but has no driver.
+Warning: Wire top.\o [5] is used but has no driver.
+Warning: Wire top.\o [4] is used but has no driver.
+Warning: Wire top.\o [3] is used but has no driver.
+Warning: Wire top.\o [2] is used but has no driver.
+Warning: Wire top.\o [1] is used but has no driver.
 Warning: Wire top.\o [0] is used but has no driver.
-Found and reported 1 problems.
+Found and reported 16 problems.
 
 3. Executing Verilog backend.
 
@@ -1324,10 +1346,11 @@ module top(o);
   wire [31:0] o;
   (* src = "UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0" *)
   wire start_addr;
-  wire \u_sim_sram_if.start_addr ;
-  assign o[31:1] = 31'h00000000;
+  (* src = "UHDM-integration-tests/tests/InterfaceParameterSetValue/top.sv:0.0-0.0" *)
+  wire [15:0] \u_sim_sram_if.start_addr ;
+  assign o[31:16] = 16'h0000;
   assign start_addr = 1'h1;
-  assign \u_sim_sram_if.start_addr  = o[0];
+  assign \u_sim_sram_if.start_addr  = o[15:0];
 endmodule
 
 4. Executing Verilog backend.
@@ -1381,7 +1404,7 @@ Simulating cycle 38.
 Simulating cycle 39.
 Simulating cycle 40.
 
-Warnings: 4 unique messages, 7 total
+Warnings: 19 unique messages, 37 total
 
 Yosys 0.29+42 (git sha1 43b807fe6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 
