@@ -1372,17 +1372,17 @@ Generating RTLIL representation for module `\dut'.
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/OneInside/dut.v:1.1-12.10> str='\dut'
       AST_LOCALPARAM <UHDM-integration-tests/tests/OneInside/dut.v:5.19-5.32> str='\OP_1' multirange=[ 0 3 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='100'(3) signed range=[2:0] int=4
+        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='100'(3) range=[2:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/OneInside/dut.v:5.13-5.18> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/OneInside/dut.v:6.19-6.32> str='\OP_2' multirange=[ 0 3 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='101'(3) signed range=[2:0] int=5
+        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='101'(3) range=[2:0] int=5
         AST_RANGE <UHDM-integration-tests/tests/OneInside/dut.v:6.13-6.18> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/OneInside/dut.v:7.19-7.32> str='\OP_3' multirange=[ 0 3 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='110'(3) signed range=[2:0] int=6
+        AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='110'(3) range=[2:0] int=6
         AST_RANGE <UHDM-integration-tests/tests/OneInside/dut.v:7.13-7.18> basic_prep range=[2:0]
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
           AST_CONSTANT <UHDM-integration-tests/tests/OneInside/dut.v:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]

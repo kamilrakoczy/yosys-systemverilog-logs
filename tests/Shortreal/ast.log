@@ -897,7 +897,6 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
-        Object '' of type 'int_typespec'
         Object '' of type 'operation'
           Object '' of type 'constant'
           Object 'a' of type 'ref_obj'
@@ -914,11 +913,9 @@ Dumping AST before simplification:
       AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:2.14-2.21> str='\a'
       AST_ASSIGN <UHDM-integration-tests/tests/Shortreal/top.sv:3.11-3.26>
         AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.11-3.12> str='\o'
-        AST_CAST_SIZE <UHDM-integration-tests/tests/Shortreal/top.sv:3.15-3.26>
-          AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
-          AST_MUL <UHDM-integration-tests/tests/Shortreal/top.sv:3.20-3.25>
-            AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
-            AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.24-3.25> str='\a'
+        AST_MUL <UHDM-integration-tests/tests/Shortreal/top.sv:3.20-3.25>
+          AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
+          AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.24-3.25> str='\a'
       AST_WIRE <UHDM-integration-tests/tests/Shortreal/top.sv:2.14-2.21> str='\a' signed range=[0:0]
         AST_RANGE <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0>
           AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000111111'(32) signed range=[31:0] int=63
@@ -933,7 +930,7 @@ Dumping Verilog AST before simplification:
     module top(o);
       output signed [31:0] o;
       wire signed [63:0] a;
-a      assign o = /** AST_CAST_SIZE **/;
+a      assign o = (2)*(a);
       initial
         a = 5.000000e-01;
     endmodule
@@ -948,11 +945,9 @@ Dumping AST after simplification:
       AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:2.14-2.21> str='\a' basic_prep
       AST_ASSIGN <UHDM-integration-tests/tests/Shortreal/top.sv:3.11-3.26> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.11-3.12> str='\o' basic_prep
-        AST_CAST_SIZE <UHDM-integration-tests/tests/Shortreal/top.sv:3.15-3.26> basic_prep
-          AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
-          AST_MUL <UHDM-integration-tests/tests/Shortreal/top.sv:3.20-3.25> basic_prep
-            AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
-            AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.24-3.25> str='\a' basic_prep
+        AST_MUL <UHDM-integration-tests/tests/Shortreal/top.sv:3.20-3.25> basic_prep
+          AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
+          AST_IDENTIFIER <UHDM-integration-tests/tests/Shortreal/top.sv:3.24-3.25> str='\a' basic_prep
       AST_WIRE <UHDM-integration-tests/tests/Shortreal/top.sv:2.14-2.21> str='\a' signed basic_prep range=[63:0]
         AST_RANGE <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> basic_prep range=[63:0]
           AST_CONSTANT <UHDM-integration-tests/tests/Shortreal/top.sv:0.0-0.0> bits='00000000000000000000000000111111'(32) signed basic_prep range=[31:0] int=63
@@ -967,7 +962,7 @@ Dumping Verilog AST after simplification:
     module top(o);
       output signed [31:0] o;
       wire signed [63:0] a;
-a      assign o = /** AST_CAST_SIZE **/;
+a      assign o = (2)*(a);
       initial
         a = 5.000000e-01;
     endmodule
@@ -1120,7 +1115,7 @@ module top(o);
   output [31:0] o;
   wire [31:0] o;
   assign a = 64'h0000000000000001;
-  assign o = 32'd0;
+  assign o = 32'd2;
 endmodule
 
 4. Executing Verilog backend.
