@@ -1445,6 +1445,7 @@ Object 'work@top' of type 'design'
         Object '' of type 'cont_assign'
           Object 'a' of type 'ref_obj'
           Object '' of type 'operation'
+            Object '' of type 'int_typespec'
             Object 'RESVAL' of type 'ref_obj'
         Object 'b' of type 'ref_obj'
       Object 'b' of type 'port'
@@ -1463,7 +1464,7 @@ Generating RTLIL representation for module `$paramod\prim_subreg\RESVAL=5'11111'
 Dumping AST before simplification:
     AST_MODULE <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:1.1-4.10> str='$paramod\prim_subreg\RESVAL=5'11111'
       AST_PARAMETER <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:2.26-2.37> str='\RESVAL' multirange=[ 0 5 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='11111'(5) range=[4:0] int=31
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='11111'(5) signed range=[4:0] int=31
         AST_RANGE <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:2.20-2.25> basic_prep range=[4:0]
           AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='00000000000000000000000000000100'(32) signed basic_prep range=[31:0] int=4
           AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1473,13 +1474,15 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.11-3.27>
         AST_IDENTIFIER <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.11-3.12> str='\a'
-        AST_IDENTIFIER <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.20-3.26> str='\RESVAL'
+        AST_CAST_SIZE <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.15-3.27>
+          AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.20-3.26> str='\RESVAL'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module \$paramod\prim_subreg\RESVAL=5'11111 (a);
       /** AST_PARAMETER **/
       output signed [31:0] a;
-      assign a = RESVAL;
+      assign a = /** AST_CAST_SIZE **/;
     endmodule
 --- END OF AST DUMP ---
 Dumping AST after simplification:
@@ -1495,13 +1498,13 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.11-3.27> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.11-3.12> str='\a' basic_prep
-        AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.20-3.26> bits='11111'(5) basic_prep range=[4:0] int=31
+        AST_CONSTANT <UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:3.15-3.27> bits='1'(1) basic_prep range=[0:0] int=1
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module \$paramod\prim_subreg\RESVAL=5'11111 (a);
       /** AST_PARAMETER **/
       output signed [31:0] a;
-      assign a = 5'b 11111;
+      assign a = 1'b 1;
     endmodule
 --- END OF AST DUMP ---
 Generating RTLIL representation for module `\top'.
@@ -1930,7 +1933,7 @@ module \$paramod\prim_subreg\RESVAL=5'11111 (a);
   (* src = "UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:1.31-1.32" *)
   output [31:0] a;
   wire [31:0] a;
-  assign a = 32'd31;
+  assign a = 32'd1;
 endmodule
 Dumping module `$paramod\prim_subreg_shadow\RESVAL=5'11111'.
 
@@ -1977,47 +1980,87 @@ Dumping module `\top'.
 5. Executing SIM pass (simulate the circuit).
 Simulating cycle 0.
 Simulating cycle 1.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 2.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 3.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 4.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 5.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 6.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 7.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 8.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 9.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 10.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 11.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 12.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 13.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 14.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 15.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 16.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 17.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 18.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 19.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 20.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 21.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 22.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 23.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 24.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 25.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 26.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 27.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 28.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 29.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 30.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 31.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 32.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 33.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 34.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 35.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 36.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 37.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 38.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 39.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 Simulating cycle 40.
+Warning: Assert top.$assert$UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30$6 (UHDM-integration-tests/tests/EnumParameterInNestedModules/top.sv:30.7-30.23) failed.
 
-Warnings: 2 unique messages, 2 total
+Warnings: 3 unique messages, 42 total
 
 Yosys 0.29+42 (git sha1 43b807fe6, gcc 11.3.0-1ubuntu1~22.04 -fPIC -Os)
 

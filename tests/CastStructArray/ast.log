@@ -1124,6 +1124,15 @@ Object 'work@top' of type 'design'
     Object '' of type 'cont_assign'
       Object 'o' of type 'ref_obj'
       Object '' of type 'operation'
+        Object 'my_struct_array' of type 'packed_array_typespec'
+          Object '' of type 'range'
+            Object '' of type 'constant'
+            Object '' of type 'constant'
+          Object 'my_struct' of type 'struct_typespec'
+            Object 'x' of type 'typespec_member'
+              Object '' of type 'range'
+                Object '' of type 'constant'
+                Object '' of type 'constant'
         Object 'a' of type 'ref_obj'
     Object 'a' of type 'logic_var'
       Object '' of type 'logic_typespec'
@@ -1153,7 +1162,9 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastStructArray/top.sv:10.11-10.34>
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.11-10.12> str='\o'
-        AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.32-10.33> str='\a'
+        AST_CAST_SIZE <UHDM-integration-tests/tests/CastStructArray/top.sv:10.15-10.34>
+          AST_CONSTANT <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> bits='00000000000000000000000000001100'(32) signed range=[31:0] int=12
+          AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.32-10.33> str='\a'
       AST_INITIAL <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0>
         AST_BLOCK <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0>
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0>
@@ -1166,7 +1177,7 @@ Dumping Verilog AST before simplification:
       wire [15:0] a;
       /** AST_TYPEDEF **/
       /** AST_TYPEDEF **/
-      assign o = a;
+      assign o = /** AST_CAST_SIZE **/;
       initial
         a = 16'b 0000000010101011;
     endmodule
@@ -1189,7 +1200,9 @@ Dumping AST after simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_ASSIGN <UHDM-integration-tests/tests/CastStructArray/top.sv:10.11-10.34> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.11-10.12> str='\o' basic_prep
-        AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.32-10.33> str='\a' basic_prep
+        AST_CAST_SIZE <UHDM-integration-tests/tests/CastStructArray/top.sv:10.15-10.34> basic_prep
+          AST_CONSTANT <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> bits='00000000000000000000000000001100'(32) signed basic_prep range=[31:0] int=12
+          AST_IDENTIFIER <UHDM-integration-tests/tests/CastStructArray/top.sv:10.32-10.33> str='\a' basic_prep
       AST_INITIAL <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> basic_prep
         AST_BLOCK <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> basic_prep
           AST_ASSIGN_EQ <UHDM-integration-tests/tests/CastStructArray/top.sv:0.0-0.0> basic_prep
@@ -1202,7 +1215,7 @@ Dumping Verilog AST after simplification:
       reg [15:0] a;
       /** AST_TYPEDEF **/
       /** AST_TYPEDEF **/
-      assign o = a;
+      assign o = /** AST_CAST_SIZE **/;
       initial
         a = 16'b 0000000010101011;
     endmodule

@@ -1224,6 +1224,7 @@ Object 'work@top' of type 'design'
         Object '' of type 'cont_assign'
           Object 'o' of type 'ref_obj'
           Object '' of type 'operation'
+            Object '' of type 'int_typespec'
             Object 'max_value' of type 'ref_obj'
     Object 'o' of type 'int_var'
     Object 'max_value' of type 'logic_var'
@@ -1266,7 +1267,9 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:0.0-0.0> bits='010100'(6) range=[5:0] int=20
         AST_ASSIGN <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.14-9.33>
           AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.14-9.15> str='\o'
-          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.23-9.32> str='\max_value'
+          AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.18-9.33>
+            AST_CONSTANT <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
+            AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.23-9.32> str='\max_value'
 --- END OF AST DUMP ---
 Dumping Verilog AST before simplification:
     module top(o);
@@ -1309,7 +1312,9 @@ Dumping AST after simplification:
         AST_CONSTANT <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:0.0-0.0> bits='010100'(6) basic_prep range=[5:0] int=20
       AST_ASSIGN <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.14-9.33> basic_prep
         AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.14-9.15> str='\o' basic_prep
-        AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.23-9.32> str='\max_value' basic_prep
+        AST_CAST_SIZE <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.18-9.33> basic_prep
+          AST_CONSTANT <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
+          AST_IDENTIFIER <UHDM-integration-tests/tests/ParameterInitializedByPartSelectOfParametersAssignedToVar/top.sv:9.23-9.32> str='\max_value' basic_prep
 --- END OF AST DUMP ---
 Dumping Verilog AST after simplification:
     module top(o);
@@ -1320,7 +1325,7 @@ Dumping Verilog AST after simplification:
       wire [5:0] max_value;
       /** AST_GENBLOCK **/
       assign max_value = 6'b 010100;
-      assign o = max_value;
+      assign o = /** AST_CAST_SIZE **/;
     endmodule
 --- END OF AST DUMP ---
 
@@ -1464,7 +1469,7 @@ module top(o);
   output [31:0] o;
   wire [31:0] o;
   assign max_value = 6'h14;
-  assign o = 32'd20;
+  assign o = 32'd0;
 endmodule
 
 4. Executing Verilog backend.
