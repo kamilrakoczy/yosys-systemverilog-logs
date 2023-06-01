@@ -1657,7 +1657,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[0]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000000'(32) unsized range=[31:0]
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000000'(32) range=[31:0]
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1681,7 +1681,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed range=[31:0]
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[1]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000001'(32) unsized range=[31:0] int=1
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000001'(32) range=[31:0] int=1
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1705,7 +1705,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed range=[31:0] int=1
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[2]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000010'(32) unsized range=[31:0] int=2
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000010'(32) range=[31:0] int=2
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1729,7 +1729,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed range=[31:0] int=2
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[3]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000011'(32) unsized range=[31:0] int=3
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000011'(32) range=[31:0] int=3
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1753,7 +1753,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed range=[31:0] int=3
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[4]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000100'(32) unsized range=[31:0] int=4
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000100'(32) range=[31:0] int=4
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1777,7 +1777,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000100'(32) signed range=[31:0] int=4
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[5]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000101'(32) unsized range=[31:0] int=5
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000101'(32) range=[31:0] int=5
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1801,7 +1801,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) signed range=[31:0] int=5
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[6]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000110'(32) unsized range=[31:0] int=6
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000110'(32) range=[31:0] int=6
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1825,7 +1825,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000110'(32) signed range=[31:0] int=6
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[7]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000111'(32) unsized range=[31:0] int=7
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000111'(32) range=[31:0] int=7
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1849,7 +1849,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000111'(32) signed range=[31:0] int=7
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[8]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001000'(32) unsized range=[31:0] int=8
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001000'(32) range=[31:0] int=8
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1873,7 +1873,7 @@ Dumping AST before simplification:
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000001000'(32) signed range=[31:0] int=8
       AST_GENBLOCK <UHDM-integration-tests/tests/MemoryPort/top.sv:3.34-5.6> str='\genblk1[9]'
         AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\i' multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001001'(32) unsized range=[31:0] int=9
+          AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001001'(32) range=[31:0] int=9
           AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -1990,7 +1990,7 @@ Dumping AST after simplification:
               AST_IDENTIFIER <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> str='$formal$UHDM-integration-tests/tests/MemoryPort/top.sv:8$1_EN' basic_prep
               AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='1'(1) basic_prep range=[0:0] int=1
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[0].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000000'(32) unsized basic_prep range=[31:0]
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000000'(32) basic_prep range=[31:0]
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2001,7 +2001,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000100100000'(32) basic_prep range=[31:0] int=288
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[1].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000001'(32) unsized basic_prep range=[31:0] int=1
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000001'(32) basic_prep range=[31:0] int=1
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2012,7 +2012,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000100000000'(32) basic_prep range=[31:0] int=256
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000001'(32) signed basic_prep range=[31:0] int=1
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[2].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000010'(32) unsized basic_prep range=[31:0] int=2
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000010'(32) basic_prep range=[31:0] int=2
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2023,7 +2023,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000011100000'(32) basic_prep range=[31:0] int=224
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000010'(32) signed basic_prep range=[31:0] int=2
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[3].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000011'(32) unsized basic_prep range=[31:0] int=3
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000011'(32) basic_prep range=[31:0] int=3
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2034,7 +2034,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000011000000'(32) basic_prep range=[31:0] int=192
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000011'(32) signed basic_prep range=[31:0] int=3
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[4].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000100'(32) unsized basic_prep range=[31:0] int=4
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000100'(32) basic_prep range=[31:0] int=4
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2045,7 +2045,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000010100000'(32) basic_prep range=[31:0] int=160
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000100'(32) signed basic_prep range=[31:0] int=4
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[5].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000101'(32) unsized basic_prep range=[31:0] int=5
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000101'(32) basic_prep range=[31:0] int=5
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2056,7 +2056,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000010000000'(32) basic_prep range=[31:0] int=128
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000101'(32) signed basic_prep range=[31:0] int=5
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[6].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000110'(32) unsized basic_prep range=[31:0] int=6
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000110'(32) basic_prep range=[31:0] int=6
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2067,7 +2067,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000001100000'(32) basic_prep range=[31:0] int=96
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000110'(32) signed basic_prep range=[31:0] int=6
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[7].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000111'(32) unsized basic_prep range=[31:0] int=7
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000000111'(32) basic_prep range=[31:0] int=7
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2078,7 +2078,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000001000000'(32) basic_prep range=[31:0] int=64
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000111'(32) signed basic_prep range=[31:0] int=7
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[8].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001000'(32) unsized basic_prep range=[31:0] int=8
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001000'(32) basic_prep range=[31:0] int=8
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
@@ -2089,7 +2089,7 @@ Dumping AST after simplification:
             AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000100000'(32) basic_prep range=[31:0] int=32
         AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000001000'(32) signed basic_prep range=[31:0] int=8
       AST_LOCALPARAM <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> str='\genblk1[9].i' basic_prep range=[31:0] multirange=[ 0 32 ] multirange_swapped=[ 0 ]
-        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001001'(32) unsized basic_prep range=[31:0] int=9
+        AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:3.0-3.0> bits='00000000000000000000000000001001'(32) basic_prep range=[31:0] int=9
         AST_RANGE <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> basic_prep range=[31:0]
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000011111'(32) signed basic_prep range=[31:0] int=31
           AST_CONSTANT <UHDM-integration-tests/tests/MemoryPort/top.sv:0.0-0.0> bits='00000000000000000000000000000000'(32) signed basic_prep range=[31:0]
